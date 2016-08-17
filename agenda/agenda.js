@@ -15,7 +15,7 @@ var Agenda;
             this.bindEvents();
         }
         Agenda.prototype.render = function () {
-            var hours = new Array(24).join("<div class=\"agendaGrid-hour\">\n            <div class=\"agendaGrid-hour-label\"></div>\n            <div class=\"agendaGrid-hour-line\"></div>\n        </div>");
+            var hours = new Array(25).join("<div class=\"agendaGrid-hour\">\n            <div class=\"agendaGrid-hour-label\"></div>\n            <div class=\"agendaGrid-hour-line\"></div>\n        </div>");
             var html = "<div class=\"agendaGrid\">\n    <div class=\"agendaGrid-hours\">\n        <div class=\"agendaGrid-hour-current\">\n            <div class=\"agendaGrid-hour-label\"><span></span></div>\n            <div class=\"agendaGrid-hour-line\"></div>\n        </div>\n        " + hours + "\n    </div>\n    <div class=\"agendaGrid-model\">\n        <div class=\"agendaGrid-model-active\">\n            <div class=\"agendaGrid-model-content\">\n                <div class=\"agendaGrid-model-title\"></div>\n                <div class=\"agendaGrid-model-text\"></div>\n            </div>\n            <div class=\"agendaGrid-model-resize\"></div>\n        </div>\n    </div>\n</div>";
             this.container.html(html);
         };

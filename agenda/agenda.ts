@@ -29,7 +29,7 @@ module Agenda {
         }
 
         private render() {
-            let hours = new Array(24).join(`<div class="agendaGrid-hour">
+            let hours = new Array(25).join(`<div class="agendaGrid-hour">
             <div class="agendaGrid-hour-label"></div>
             <div class="agendaGrid-hour-line"></div>
         </div>`);
