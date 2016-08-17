@@ -1,36 +1,16 @@
-.agenda
-  -webkit-touch-callout none
-  -webkit-user-select none
-  -khtml-user-select none
-  -moz-user-select none
-  -ms-user-select none
-  user-select none
-
-  height 100%
-  display flex
-  flex-direction column
-
-  .agenda-header
-    line-height 24px
-    padding 16px
-    flex-grow 0
-    flex-shrink 0
-
-  .agenda-allday
-    padding 16px
-    flex-grow 0
-    flex-shrink 0
-
-  .agenda-grid
-    flex-grow 1
-    overflow auto
-
 .agendaGrid
   $hourHeight = 48px
   $currentColor = #e84646
   $labelPaddingLeft = 8px
   $labelPaddingRight = 16px
   $labelWidth = 40px + $labelPaddingLeft + $labelPaddingRight
+
+  -webkit-touch-callout none
+  -webkit-user-select none
+  -khtml-user-select none
+  -moz-user-select none
+  -ms-user-select none
+  user-select none
 
   height 24 * $hourHeight + ($hourHeight / 2)
   background #fff
