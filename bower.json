@@ -1,0 +1,6 @@
+{
+  "name": "agenda",
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
+}

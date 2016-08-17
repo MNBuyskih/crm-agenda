@@ -1,0 +1,125 @@
+.agenda
+  -webkit-touch-callout none
+  -webkit-user-select none
+  -khtml-user-select none
+  -moz-user-select none
+  -ms-user-select none
+  user-select none
+
+  height 100%
+  display flex
+  flex-direction column
+
+  .agenda-header
+    line-height 24px
+    padding 16px
+    flex-grow 0
+    flex-shrink 0
+
+  .agenda-allday
+    padding 16px
+    flex-grow 0
+    flex-shrink 0
+
+  .agenda-grid
+    flex-grow 1
+    overflow auto
+
+.agendaGrid
+  $hourHeight = 48px
+  $currentColor = #e84646
+  $labelPaddingLeft = 8px
+  $labelPaddingRight = 16px
+  $labelWidth = 40px + $labelPaddingLeft + $labelPaddingRight
+
+  height 24 * $hourHeight + ($hourHeight / 2)
+  background #fff
+  position relative
+  font-family sans-serif
+  font-size 14px
+  box-sizing border-box
+
+  & *
+    box-sizing border-box
+
+  .agendaGrid-hours
+    position relative
+    counter-reset agendaGrid-hour -1
+
+  .agendaGrid-hour
+    counter-increment agendaGrid-hour
+
+  .agendaGrid-hour
+  .agendaGrid-hour-current
+    height $hourHeight
+    display flex
+    align-items flex-end
+
+  .agendaGrid-hour-current
+    position absolute
+    left 0
+    width 100%
+    .agendaGrid-hour-line
+      border-top 1px solid $currentColor
+      border-bottom none
+    .agendaGrid-hour-label
+      color $currentColor
+      font-size 10px
+      font-weight 600
+      span
+        background #fff
+      &:before
+        content ''
+      &:after
+        content ''
+        width 3px
+        height @width
+        background $currentColor
+        position absolute
+        top 23px
+        left 59px
+
+  .agendaGrid-hour-label
+    padding 0 $labelPaddingLeft 0 $labelPaddingRight
+    font-size 12px
+    text-align right
+    width $labelWidth
+    line-height $hourHeight
+    flex-shrink 0
+    &:before
+      content counter(agendaGrid-hour) ":00"
+
+  .agendaGrid-hour-line
+    border-bottom 1px solid #f3f5f6
+    border-top 1px solid #e0e4e7
+    height ($hourHeight / 2)
+    width 100%
+
+  .agendaGrid-model
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    padding-left $labelWidth
+  .agendaGrid-model-active
+    background rgba(52, 152, 219, 0.8);
+    position absolute
+    left $labelWidth
+    right 0
+    min-height 24px
+    line-height @min-height
+
+  .agendaGrid-model-content
+    overflow hidden
+    max-height 100%
+    padding 0 8px
+    color #fff
+
+  .agendaGrid-model-resize
+    position absolute
+    width 100%
+    height 8px
+    left 0
+    bottom 0
+    cursor ns-resize

@@ -1,0 +1,126 @@
+.agenda {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.agenda .agenda-header {
+  line-height: 24px;
+  padding: 16px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.agenda .agenda-allday {
+  padding: 16px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.agenda .agenda-grid {
+  flex-grow: 1;
+  overflow: auto;
+}
+.agendaGrid {
+  height: 1176px;
+  background: #fff;
+  position: relative;
+  font-family: sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.agendaGrid * {
+  box-sizing: border-box;
+}
+.agendaGrid .agendaGrid-hours {
+  position: relative;
+  counter-reset: agendaGrid-hour -1;
+}
+.agendaGrid .agendaGrid-hour {
+  counter-increment: agendaGrid-hour;
+}
+.agendaGrid .agendaGrid-hour,
+.agendaGrid .agendaGrid-hour-current {
+  height: 48px;
+  display: flex;
+  align-items: flex-end;
+}
+.agendaGrid .agendaGrid-hour-current {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+.agendaGrid .agendaGrid-hour-current .agendaGrid-hour-line {
+  border-top: 1px solid #e84646;
+  border-bottom: none;
+}
+.agendaGrid .agendaGrid-hour-current .agendaGrid-hour-label {
+  color: #e84646;
+  font-size: 10px;
+  font-weight: 600;
+}
+.agendaGrid .agendaGrid-hour-current .agendaGrid-hour-label span {
+  background: #fff;
+}
+.agendaGrid .agendaGrid-hour-current .agendaGrid-hour-label:before {
+  content: '';
+}
+.agendaGrid .agendaGrid-hour-current .agendaGrid-hour-label:after {
+  content: '';
+  width: 3px;
+  height: 3px;
+  background: #e84646;
+  position: absolute;
+  top: 23px;
+  left: 59px;
+}
+.agendaGrid .agendaGrid-hour-label {
+  padding: 0 8px 0 16px;
+  font-size: 12px;
+  text-align: right;
+  width: 64px;
+  line-height: 48px;
+  flex-shrink: 0;
+}
+.agendaGrid .agendaGrid-hour-label:before {
+  content: counter(agendaGrid-hour) ":00";
+}
+.agendaGrid .agendaGrid-hour-line {
+  border-bottom: 1px solid #f3f5f6;
+  border-top: 1px solid #e0e4e7;
+  height: 24px;
+  width: 100%;
+}
+.agendaGrid .agendaGrid-model {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 64px;
+}
+.agendaGrid .agendaGrid-model-active {
+  background: rgba(52,152,219,0.8);
+  position: absolute;
+  left: 64px;
+  right: 0;
+  min-height: 24px;
+  line-height: 24px;
+}
+.agendaGrid .agendaGrid-model-content {
+  overflow: hidden;
+  max-height: 100%;
+  padding: 0 8px;
+  color: #fff;
+}
+.agendaGrid .agendaGrid-model-resize {
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  left: 0;
+  bottom: 0;
+  cursor: ns-resize;
+}
