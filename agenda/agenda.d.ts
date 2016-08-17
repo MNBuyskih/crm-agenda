@@ -1,4 +1,4 @@
-declare module Agenda {
+declare module "Agenda" {
     export let Agenda: IAgendaStatic;
 
     export interface IAgendaOptions {
