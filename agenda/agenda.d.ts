@@ -8,7 +8,7 @@ declare module Agenda {
     }
 
     interface IAgendaStatic {
-        new(container: JQuery, private options: IAgendaOptions): IAgendaInstance;
+        new(container: JQuery, options: IAgendaOptions): IAgendaInstance;
     }
 
     interface IAgendaInstance {
